@@ -1,0 +1,27 @@
+This program outputs a single, random quote from a list to your commandline. It is meant to be added
+to your .bashrc so that the quote appears at the top of each new terminal that you open.
+
+=COMPILING=
+You can compile this using any C++ compiler. On my Linux system, I am using the following command
+
+'g++ motivation.cpp -o motivate'
+
+Then, simply add a call to motivate in your .bashrc like this
+
+'~/motivate'
+
+After that, you'll get a new message at the top of each new terminal.
+
+=ADDING MESSAGE=
+Quotes are added to a C++ Vector. Currently, reading from a separate file is not yet supported. I'm
+working on that.
+
+To add a new quote/message, simply open up motivation.cpp and add a new "quotes.push_back()" call
+like this
+
+'quotes.push_back("New motivational quote.");
+
+You can delete messages by deleting the line.
+
+After you have many any changes you want, you will need to recompile per the directions above until
+I get file support build in.
