@@ -1,8 +1,8 @@
 This program outputs a single, random quote from a list to your commandline. It is meant to be added
 to your .bashrc so that the quote appears at the top of each new terminal that you open.
 
-=COMPILING=
-You can compile this using any C++ compiler. On my Linux system, I am using the following command
+=COMPILING= You can compile this using any C++ compiler. On my Linux system, I am using the
+following command
 
 'g++ motivation.cpp -o motivate'
 
@@ -12,16 +12,12 @@ Then, simply add a call to motivate in your .bashrc like this
 
 After that, you'll get a new message at the top of each new terminal.
 
-=ADDING MESSAGE=
-Quotes are added to a C++ Vector. Currently, reading from a separate file is not yet supported. I'm
-working on that.
+=ADDING MESSAGE= Messages are pulled from a text file called quotes.txt. The program assumes this
+file is in the same directory as the executable. 
 
-To add a new quote/message, simply open up motivation.cpp and add a new "quotes.push_back()" call
-like this
+This file should contain 1 quote per line. 
 
-'quotes.push_back("New motivational quote.");
+Blank lines count as "quotes" so do not use blank lines to separate quotes.
 
-You can delete messages by deleting the line.
-
-After you have many any changes you want, you will need to recompile per the directions above until
-I get file support build in.
+Quotes spanning more than 1 line will be split into separate "quotes", so do not use quotes which
+are longer than 1 line.
